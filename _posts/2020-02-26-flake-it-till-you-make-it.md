@@ -2,7 +2,6 @@
 layout: post
 title: 2장 Amazon EKS 네트워크
 subtitle: Excerpt from Soulshaping by Jeff Brown
-cover-img: /assets/img/path.jpg
 tags: [books, test]
 ---
 
