@@ -11,7 +11,7 @@ comments: true
 This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
 
 **Here is some bold text**
-
+<br/>
 ## Amazon EKS 배포
 
 Here's a useless table:
@@ -23,7 +23,7 @@ Here's a useless table:
 | Seven | Eight | Six |
 | Two | Three | One |
 
-**eks 클러스터 & 관리형노드그룹 배포 전 정보 확인해**
+__eks 클러스터 & 관리형노드그룹 배포 전 정보 확인해__
 
 How about a yummy crepe?
 
@@ -44,7 +44,7 @@ foo(3)
 ~~~
 
 
-kubectl 설치 확인
+<span style="background-color:#fff5b1"> kubectl 설치 확인 </span>
 
 ```javascript
 aws ec2 describe-vpcs --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
@@ -56,6 +56,8 @@ And here is the same code yet again but with line numbers:
 export PubSubnet1=$(aws ec2 describe-subnets --filters Name=tag:Name,Values="$CLUSTER_NAME-PublicSubnet1" \
 --query "Subnets[0].[SubnetId]" --output text)
 {% endhighlight %}
+
+***
 
 ## Boxes
 You can add notification, warning and error boxes like this:
