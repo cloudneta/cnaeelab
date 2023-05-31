@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Flake it till you make it
+title: 2장 Amazon EKS 네트워크
 subtitle: Excerpt from Soulshaping by Jeff Brown
 cover-img: /assets/img/path.jpg
 share-img: /assets/img/path.jpg
