@@ -68,6 +68,7 @@ layout: page
       </div>
       {% endif %}
 
+<!--
       <div class="post-entry">
         {% assign excerpt_length = site.excerpt_length | default: 50 %}
         {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
@@ -81,7 +82,7 @@ layout: page
       {% if site.feed_show_tags != false and post.tags.size > 0 %}
       <div class="blog-tags">
         <span>Tags:</span>
-        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics 
         <ul class="d-inline list-inline" role="list">
           {% for tag in post.tags %}
           <li class="list-inline-item">
@@ -91,7 +92,8 @@ layout: page
         </ul>
       </div>
       {% endif %}
-
+-->
+    
     </article>
   </li>
   {% endfor %}
