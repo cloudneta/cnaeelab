@@ -35,7 +35,7 @@ It can also be centered!
 
 ## 기본 정보 확인
 
-사용자 확인
+* 사용자 확인
 ~~~
 var foo = function(x) {
   return(x + 5);
