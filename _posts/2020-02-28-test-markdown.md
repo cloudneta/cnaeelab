@@ -23,7 +23,8 @@ Here's a useless table:
 | Seven | Eight | Six |
 | Two | Three | One |
 
-eks 클러스터 & 관리형노드그룹 배포 전 정보 확인
+eks 클러스터 & **관리형노드그룹** 배포 전 정보 확인
+
 How about a yummy crepe?
 
 ![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
