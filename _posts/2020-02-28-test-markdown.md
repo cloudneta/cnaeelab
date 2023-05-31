@@ -66,7 +66,7 @@ export PubSubnet1=$(aws ec2 describe-subnets --filters Name=tag:Name,Values="$CL
 
 ***
 
-## Boxes
+## Kubernetes
 You can add notification, warning and error boxes like this:
 
 ---
