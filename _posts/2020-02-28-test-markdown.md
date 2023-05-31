@@ -50,10 +50,8 @@ aws ec2 describe-vpcs --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
 And here is the same code yet again but with line numbers:
 
 {% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+export PubSubnet1=$(aws ec2 describe-subnets --filters Name=tag:Name,Values="$CLUSTER_NAME-PublicSubnet1" \
+--query "Subnets[0].[SubnetId]" --output text)
 {% endhighlight %}
 
 ## Boxes
