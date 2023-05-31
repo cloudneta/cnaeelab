@@ -12,7 +12,7 @@ This is a demo post to show you how to write blog posts with markdown.  I strong
 
 **Here is some bold text**
 
-## Here is a secondary heading
+## Amazon EKS 배포
 
 Here's a useless table:
 
@@ -32,8 +32,9 @@ It can also be centered!
 
 ![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
 
-Here's a code chunk:
+## 기본 정보 확인
 
+사용자 확인
 ~~~
 var foo = function(x) {
   return(x + 5);
@@ -41,7 +42,8 @@ var foo = function(x) {
 foo(3)
 ~~~
 
-And here is the same code with syntax highlighting:
+
+kubectl 설치 확인
 
 ```javascript
 aws ec2 describe-vpcs --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
