@@ -44,10 +44,7 @@ foo(3)
 And here is the same code with syntax highlighting:
 
 ```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+aws ec2 describe-vpcs --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
 ```
 
 And here is the same code yet again but with line numbers:
