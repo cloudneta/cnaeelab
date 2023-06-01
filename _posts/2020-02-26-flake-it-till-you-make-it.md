@@ -30,3 +30,16 @@ A soulful notion of success rests on the actualization of our innate image. Succ
     
 
 ---
+
+<details>
+<summary>**대본**</summary>
+<div markdown="1">
+
+네, 안녕하세요. CloudNet@ 팀입니다.
+Amazon EKS 기본 강의의 1장인 Amazon EKS 설치 및 사용법에 대해 알아보겠습니다.
+이번 장의 주요 내용은 사전 지식 사항에 대해 간략한 설명과 참고 자료를 소개해 드릴거고요. 
+다음으로 이번 강의의 핵심 주제인 Amazon EKS에 대한 기본적인 이론 설명을 드릴 것입니다.
+이러한 이론 설명을 바탕하에 실습을 통해 Amazon EKS를 배포하고 기본적인 사용 방법을 알아보는 시간이 되겠습니다.
+
+</div>
+</details>
