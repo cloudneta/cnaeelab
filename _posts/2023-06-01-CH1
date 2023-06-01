@@ -1,3 +1,10 @@
+---
+layout: post
+title: 1장 실습 Amazon EKS 설치 및 사용
+subtitle: 이번 실습의 목적은 Amazon EKS를 직접 배포하고 사용법을 알아보는 것 입니다.
+tags: [books, test]
+---
+
 <br>
 >이번 실습의 목적은 Amazon EKS를 직접 배포하고 사용법을 알아보는 것 입니다.
 
