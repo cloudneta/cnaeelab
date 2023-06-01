@@ -32,7 +32,7 @@ A soulful notion of success rests on the actualization of our innate image. Succ
 ---
 
 <details>
-<summary>**대본**</summary>
+<summary>대본</summary>
 <div markdown="1">
 <br/>
 네, 안녕하세요. CloudNet@ 팀입니다.<br/>
