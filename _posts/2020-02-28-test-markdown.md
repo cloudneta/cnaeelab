@@ -54,7 +54,7 @@ foo(3)
 <span style="background-color:#99ffff"> kubectl 설치 확인 </span>
 
 ```javascript
-aws ec2 describe-vpcs --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
+aws ec2 **describe-vpcs** --filters "Name=tag:Name,Values=$CLUSTER_NAME-VPC" | jq
 ```
 
 And here is the same code yet again but with line numbers:
