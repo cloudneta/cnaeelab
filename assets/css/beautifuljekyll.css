@@ -109,6 +109,12 @@ img {
   margin-top: -1.5625rem;
 }
 
+.totop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+
 /* Comments */
 
 .disqus-comments {
