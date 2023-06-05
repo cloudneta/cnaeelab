@@ -21,11 +21,11 @@ author: Ongja_CloudNet@
 
 navbar-links:
   notice: "aboutme"
-  inflearn: "https://www.inflearn.com/course/cloudneta-aws-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%9E%85%EB%AC%B8#"
+  inflearn: "https://www.inflearn.com/course/cloudneta-aws-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%9E%85%EB%AC%B8#"{:target="_blank"}
 #  Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
 #    - Learn markdown: "https://www.markdowntutorial.com/"
-  Blog: "http://blog.cloudneta.net"
+  Blog: "http://blog.cloudneta.net"{:target="_blank"}
 
 ################
 # --- Logo --- #
