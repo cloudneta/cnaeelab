@@ -21,7 +21,7 @@ future: true
 ###############################################
 
 navbar-links:
-  notice: "aboutme"
+  notice: "notice"
   inflearn: "https://www.inflearn.com/course/cloudneta-aws-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9-%EC%9E%85%EB%AC%B8#"
 #  Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
