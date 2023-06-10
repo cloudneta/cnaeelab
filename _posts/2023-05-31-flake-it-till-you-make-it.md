@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Test2
-subtitle: Excerpt from Soulshaping by Jeff Brown
+title: 3장 실습 Amazon EKS 스토리지 및 노드 관리
+subtitle: ...
 tags: [books, test]
 ---
 
