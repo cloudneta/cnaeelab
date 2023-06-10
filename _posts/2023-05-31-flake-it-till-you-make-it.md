@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3장 실습 Amazon EKS 스토리지 및 노드 관리
-subtitle: ...
+subtitle: EKS 스토리지 구성과 CSI 컨트롤러에 대해 알아봅니다.
 tags: [books, test]
 ---
 
