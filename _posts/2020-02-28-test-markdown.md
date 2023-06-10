@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Test1
-subtitle: Each post also has a subtitle
+title: 2장 실습 Amazon EKS 네트워킹
+subtitle: Amazon EKS의 네트워크 구조를 알아보고 통신 흐름을 살펴봅니다.
 gh-repo: daattali/beautiful-jekyll
 gh-badge: [star, fork, follow]
 tags: [test]
