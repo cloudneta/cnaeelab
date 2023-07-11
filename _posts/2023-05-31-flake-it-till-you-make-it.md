@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 3장 실습 Amazon EKS 스토리지 및 노드 관리
-subtitle: EKS 스토리지 구성과 CSI 컨트롤러에 대해 알아봅니다.
+title: 2장 실습 Amazon VPC CNI 네트워크 확인하기
+subtitle: Amazon EKS에 구성된 Amazon VPC CNI 구성을 확인합니다.
 tags: [books, test]
 ---
 
