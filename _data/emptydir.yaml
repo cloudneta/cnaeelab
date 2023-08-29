@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  terminationGracePeriodSeconds: 3
+  containers:
+  - name: busybox1
+    image: busybox
+    volumeMounts:
+    - name: empty-dir
+      mountPath: /mount
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do date >> /mount/1-out.txt; cd /mount; sync; sync; sleep 10; done"
+  - name: busybox2
+    image: busybox
+    volumeMounts:
+    - name: empty-dir
+      mountPath: /mount
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do date >> /mount/2-out.txt; cd /mount; sync; sync; sleep 10; done"
+  volumes:
+  - name: empty-dir
+    emptyDir: {}
