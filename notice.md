@@ -6,4 +6,4 @@
 
 물론 설명은 인프런 강의에서 설명드리고요. :)
 
-- CloudNet@ Team -
+by. CloudNet@ Team
