@@ -155,3 +155,27 @@ $(window).scroll(function () {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('pre code').forEach(function(codeBlock) {
+    var button = document.createElement('button');
+    button.className = 'copy-code-btn';
+    button.type = 'button';
+    button.innerText = 'Copy';
+    button.addEventListener('click', function() {
+      navigator.clipboard.writeText(codeBlock.innerText).then(function() {
+        button.textContent = 'Copied!';
+        setTimeout(function() { button.textContent = 'Copy'; }, 2000);
+      });
+    });
+
+    var pre = codeBlock.parentNode;
+    if(pre.parentNode.classList.contains('highlight')) {
+      var highlightContainer = pre.parentNode;
+      highlightContainer.parentNode.insertBefore(button, highlightContainer);
+    } else {
+      pre.parentNode.insertBefore(button, pre);
+    }
+  });
+});
+
