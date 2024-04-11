@@ -156,31 +156,3 @@ $(window).scroll(function () {
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.highlight .language-javascript').forEach(function(codeBlock) {
-    var button = document.createElement('button');
-    button.className = 'copy-code-btn';
-    button.textContent = 'Copy';
-    button.style.position = 'absolute';
-    button.style.top = '5px';
-    button.style.right = '5px';
-    button.style.zIndex = '10';
-
-    button.addEventListener('click', function() {
-      navigator.clipboard.writeText(codeBlock.innerText).then(function() {
-        console.log('Copied!');
-        button.textContent = 'Copied!';
-        setTimeout(function() { button.textContent = 'Copy'; }, 2000);
-      }).catch(function(err) {
-        console.error('Error:', err);
-      });
-    });
-
-    var parent = codeBlock.closest('.highlight');
-    if (parent) {
-      parent.style.position = 'relative';
-      parent.appendChild(button);
-    }
-  });
-});
