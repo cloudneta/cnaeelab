@@ -23,3 +23,15 @@ layout: base
     </div>
   {% endif %}
 </div>
+
+<!-- _includes/head.html 파일 내에 추가 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+<!-- 복사 버튼 -->
+<button class="btn" data-clipboard-target="#codeBlock">Copy</button>
+<pre><code id="codeBlock">여기는 코드가 들어갑니다...</code></pre>
+
+<!-- ClipboardJS 스크립트 활성화 -->
+<script>
+new ClipboardJS('.btn');
+</script>
