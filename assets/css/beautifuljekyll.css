@@ -1125,15 +1125,3 @@ pre {
     display: inline-block;
   }
 }
-
-/* 복사 버튼 스타일 */
-.copy-code-btn {
-  position: absolute;
-  top: 10px; /* 버튼의 위치 조정 */
-  right: 10px;
-  z-index: 1000; /* 다른 요소에 가려지지 않도록 z-index 설정 */
-  opacity: 1; /* 투명도 확인 */
-  visibility: visible; /* 보이도록 설정 */
-  display: block; /* 화면에 표시 */
-  background-color: red; /* 배경색을 빨강으로 설정하여 쉽게 확인 */
-}
