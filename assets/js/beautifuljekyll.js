@@ -156,34 +156,31 @@ $(window).scroll(function () {
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
 
+
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('code.language-javascript').forEach(function(codeBlock) {
-    // 버튼 생성
+  document.querySelectorAll('.highlight .language-javascript').forEach(function(codeBlock) {
     var button = document.createElement('button');
     button.className = 'copy-code-btn';
-    button.type = 'button';
     button.textContent = 'Copy';
-    button.style.position = 'absolute'; // 버튼 위치 조정
-    button.style.top = '5px'; // 상단에서 5px
-    button.style.right = '5px'; // 우측에서 5px
-    button.style.zIndex = '10'; // z-index 설정
+    button.style.position = 'absolute';
+    button.style.top = '5px';
+    button.style.right = '5px';
+    button.style.zIndex = '10';
 
-    // 클릭 이벤트 리스너 설정
     button.addEventListener('click', function() {
-      var codeToCopy = codeBlock.innerText; // 코드 복사
-      navigator.clipboard.writeText(codeToCopy).then(function() {
+      navigator.clipboard.writeText(codeBlock.innerText).then(function() {
+        console.log('Copied!');
         button.textContent = 'Copied!';
         setTimeout(function() { button.textContent = 'Copy'; }, 2000);
       }).catch(function(err) {
-        console.error('Copy to clipboard failed:', err);
+        console.error('Error:', err);
       });
     });
 
-    // 코드 블록의 상위 <td> 요소 찾기
-    var parentTd = codeBlock.closest('td.code');
-    if (parentTd) {
-      parentTd.style.position = 'relative'; // 상대 위치 설정
-      parentTd.appendChild(button); // 버튼 추가
+    var parent = codeBlock.closest('.highlight');
+    if (parent) {
+      parent.style.position = 'relative';
+      parent.appendChild(button);
     }
   });
 });
