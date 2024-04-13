@@ -10,6 +10,3 @@
   ./"${KREW}" install krew
 )
 
-sleep 1
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
