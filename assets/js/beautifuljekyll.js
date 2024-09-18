@@ -168,7 +168,7 @@ var BeautifulJekyllJS = {
         // **라인 복사 버튼 생성**
         var lineCopyButton = document.createElement('button');
         lineCopyButton.className = 'copy-code-btn-line';
-        lineCopyButton.textContent = 'Copy Line';
+        lineCopyButton.textContent = 'Copy';
 
         // **라인 복사 버튼 클릭 시**
         lineCopyButton.addEventListener('click', function() {
