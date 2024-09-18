@@ -127,25 +127,26 @@ img {
   }
 }
 
-/* details 태그 내에서 코드 블록을 담고 있는 div의 레이아웃 문제 해결 */
+details {
+  display: block;
+}
+
 details div {
   display: block !important;
-  width: 100% !important;
-  overflow-x: auto !important; /* 코드 블록이 넘칠 때 가로 스크롤을 허용 */
-}
-
-details div pre {
-  max-width: 100% !important;
   overflow-x: auto !important;
-  white-space: pre-wrap !important; /* 줄바꿈 방지 */
 }
 
-/* pre, code 블록을 위한 스타일 */
-pre code {
+pre {
   display: block;
-  max-width: 100% !important;
-  white-space: pre-wrap !important; /* 긴 코드 줄이 잘리지 않고 줄바꿈 되도록 */
-  overflow-x: auto !important; /* 넘칠 경우 가로 스크롤 허용 */
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+code {
+  white-space: pre-wrap;
+  display: block;
+  overflow-x: auto;
 }
 
 /* --- copy button --- */
