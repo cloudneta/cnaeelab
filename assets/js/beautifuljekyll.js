@@ -130,9 +130,9 @@ var BeautifulJekyllJS = {
       
       button.addEventListener('click', function() {
         // 코드 텍스트만 복사 (라인 번호 제외) & 줄바꿈 유지
-        var codeText = Array.from(codeBlock.childNodes)
-          .map(node => node.nodeType === Node.TEXT_NODE ? node.textContent : node.innerText) // 텍스트 노드 또는 요소 텍스트 가져오기
-          .join(''); // 텍스트를 병합
+        var codeLines = codeBlock.querySelectorAll('span'); // 코드 라인들이 span으로 감싸져 있는 경우
+        var codeText = Array.from(codeLines).map(line => line.textContent).join('\n'); // 각 줄의 텍스트만 추출
+
         navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
