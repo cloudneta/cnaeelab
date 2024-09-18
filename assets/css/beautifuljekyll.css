@@ -150,27 +150,26 @@ pre {
 /* --- line copy button --- */
 .code-line-container {
   display: flex;
-  justify-content: space-between; /* 라인 텍스트와 버튼을 양쪽 끝에 배치 */
-  align-items: center;
-  white-space: pre-wrap; /* 텍스트 줄바꿈 허용 */
-}
-
-.code-line {
-  flex-grow: 1; /* 텍스트가 줄을 넘어가도 버튼이 우측 끝에 고정 */
+  justify-content: flex-start; /* 텍스트를 왼쪽 정렬, 버튼은 오른쪽 */
+  position: relative; /* 버튼을 이 컨테이너 안에서 절대 위치 */
+  white-space: pre; /* 줄바꿈 방지, 스크롤 가능 */
+  overflow-x: auto; /* 좌우 스크롤 허용 */
 }
 
 .copy-code-btn-line {
-  display: none; /* 기본적으로 복사 버튼 숨김 */
+  position: absolute; /* 오버랩하여 고정 */
+  right: 0; /* 항상 우측 끝에 고정 */
   background-color: #007bff;
   color: white;
   border: none;
   padding: 2px 5px;
   cursor: pointer;
   font-size: 12px;
+  display: none; /* 기본적으로 숨김 */
 }
 
 .code-line-container:hover .copy-code-btn-line {
-  display: inline-block; /* 호버할 때만 복사 버튼 표시 */
+  display: inline-block; /* 호버할 때만 표시 */
 }
 
 
