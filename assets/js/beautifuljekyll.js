@@ -149,6 +149,7 @@ var BeautifulJekyllJS = {
         // 클립보드에 텍스트 복사
         navigator.clipboard.writeText(codeText)
           .then(() => {
+            button.style.visibility = 'hidden';
             button.textContent = 'Copied!';
             setTimeout(() => button.textContent = 'Copy', 2000);
           })
