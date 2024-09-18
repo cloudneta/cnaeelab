@@ -27,7 +27,7 @@ var BeautifulJekyllJS = {
 
     // initCopyButton
     BeautifulJekyllJS.initCopyButtons();
-    BeautifulJekyllJS.initLineCopyButtons();
+    
 
     // show the big header image
     BeautifulJekyllJS.initImgs();
