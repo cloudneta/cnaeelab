@@ -148,17 +148,22 @@ pre {
 }
 
 /* --- line copy button --- */
+pre {
+  overflow-x: auto; /* 전체 코드 블록에 스크롤 발생 */
+  white-space: pre; /* 줄바꿈 방지 */
+}
+
 .code-line-container {
   display: flex;
-  justify-content: flex-start; /* 텍스트를 왼쪽 정렬, 버튼은 오른쪽 */
-  position: relative; /* 버튼을 이 컨테이너 안에서 절대 위치 */
-  white-space: pre; /* 줄바꿈 방지, 스크롤 가능 */
-  overflow-x: auto; /* 좌우 스크롤 허용 */
+  justify-content: space-between; /* 텍스트와 버튼을 양쪽 끝에 배치 */
+  align-items: center;
+  white-space: pre; /* 라인 내에서 줄바꿈을 방지 */
+  position: relative; /* 버튼을 절대 위치로 고정하기 위한 설정 */
 }
 
 .copy-code-btn-line {
-  position: absolute; /* 오버랩하여 고정 */
-  right: 0; /* 항상 우측 끝에 고정 */
+  position: absolute; /* 버튼을 절대 위치로 고정 */
+  right: 0; /* 버튼이 항상 우측 끝에 위치 */
   background-color: #007bff;
   color: white;
   border: none;
@@ -169,7 +174,7 @@ pre {
 }
 
 .code-line-container:hover .copy-code-btn-line {
-  display: inline-block; /* 호버할 때만 표시 */
+  display: inline-block; /* 호버 시에만 버튼 표시 */
 }
 
 
