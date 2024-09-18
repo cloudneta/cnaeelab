@@ -25,6 +25,9 @@ var BeautifulJekyllJS = {
       $(".navbar").removeClass("top-nav-expanded");
     });
 
+    // initCopyButton
+    BeautifulJekyllJS.initCopyButtons();
+
     // show the big header image
     BeautifulJekyllJS.initImgs();
 
@@ -110,6 +113,23 @@ var BeautifulJekyllJS = {
     } else {
       $(".img-desc").hide();
     }
+  },
+
+  // codeblock copy button
+  initCopyButtons: function() {
+    // 전체 코드 블록 복사 기능
+    const copyCodeButtons = document.querySelectorAll('.copy-code-btn');
+    copyCodeButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const codeBlock = button.parentElement.querySelector('pre > code');
+        navigator.clipboard.writeText(codeBlock.textContent)
+          .then(() => {
+            button.textContent = 'Copied!';
+            setTimeout(() => button.textContent = 'Copy', 2000);
+          })
+          .catch(err => console.error('Error copying text: ', err));
+      });
+    });
   },
 
   initSearch : function() {
