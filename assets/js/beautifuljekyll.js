@@ -117,29 +117,28 @@ var BeautifulJekyllJS = {
 
   // codeblock copy button
   initCopyButtons: function() {
-    // 코드 블록에 복사 버튼 추가
+    // 모든 코드 블록에 복사 버튼 추가
     document.querySelectorAll('pre').forEach(function(pre) {
       var codeBlock = pre.querySelector('code'); // 코드 블록을 찾기
       if (!codeBlock) {
         return; // pre 태그 내에 code 블록이 없는 경우 버튼을 추가하지 않음
       }
+
       // 복사 버튼 생성
       var button = document.createElement('button');
       button.className = 'copy-code-btn';
       button.textContent = 'Copy';
-      
-       button.addEventListener('click', function() {
-        // 코드 블록에서 라인 넘버가 아닌 순수 코드 텍스트만 복사
-        var codeText = ''; // 복사할 코드 텍스트를 저장할 변수
-        codeBlock.childNodes.forEach(function(node) {
-          var lineText = node.textContent || node.innerText;
 
-          // "##"로 시작하는 주석은 건너뛴다
-          if (lineText && !lineText.trim().startsWith('##')) {
-            codeText += lineText; // 해당 노드의 텍스트만 추가
-          }
-        });
+      // 복사 버튼 클릭 시
+      button.addEventListener('click', function() {
+        // 코드 블록에서 텍스트만 복사, 줄바꿈 및 주석 필터링
+        var codeText = codeBlock.innerText.split('\n') // 줄바꿈을 기준으로 배열로 변환
+          .filter(function(line) {
+            return !line.trim().startsWith('##'); // "##"로 시작하는 주석을 필터링
+          })
+          .join('\n'); // 줄바꿈을 유지하면서 병합
 
+        // 클립보드에 텍스트 복사
         navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
@@ -147,8 +146,10 @@ var BeautifulJekyllJS = {
           })
           .catch(err => console.error('Error copying text: ', err));
       });
-      pre.style.position = 'relative'; // 버튼이 올바르게 배치될 수 있도록 위치 스타일을 설정
-      pre.insertBefore(button, pre.firstChild); // 버튼을 첫 번째 요소로 추가
+
+      // 복사 버튼을 코드 블록에 추가
+      pre.style.position = 'relative';
+      pre.insertBefore(button, pre.firstChild); // 복사 버튼을 첫 번째 요소로 추가
     });
   },
 
