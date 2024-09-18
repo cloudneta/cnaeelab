@@ -149,9 +149,23 @@ var BeautifulJekyllJS = {
         // 클립보드에 텍스트 복사
         navigator.clipboard.writeText(codeText)
           .then(() => {
+            // 기존 버튼 숨기기
             button.style.visibility = 'hidden';
-            button.textContent = 'Copied!';
-            setTimeout(() => button.textContent = 'Copy', 2000);
+            // 복사 완료 메시지 버튼 추가
+            var successButton = document.createElement('button');
+            successButton.className = 'copy-success-btn';
+            successButton.textContent = 'Copied!';
+            successButton.style.position = 'absolute';
+            successButton.style.right = button.style.right;
+            successButton.style.top = button.style.top;
+
+            pre.insertBefore(successButton, button);
+
+            setTimeout(() => {
+              // 메시지 버튼을 삭제하고 기존 버튼을 다시 보이게 함
+              successButton.remove();
+              button.style.visibility = 'visible';
+            }, 2000);
           })
           .catch(err => console.error('Error copying text: ', err));
       });
