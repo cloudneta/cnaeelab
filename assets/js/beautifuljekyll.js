@@ -118,6 +118,13 @@ var BeautifulJekyllJS = {
 
   // codeblock copy button
   initCopyButtons: function() {
+    document.querySelectorAll('details').forEach(function(details) {
+      details.addEventListener('toggle', function() {
+        if (details.open) {
+          BeautifulJekyllJS.initCopyButtons();
+        }
+      });
+    });
     // 모든 코드 블록에 복사 버튼 추가
     document.querySelectorAll('pre').forEach(function(pre) {
       var codeBlock = pre.querySelector('code'); // 코드 블록을 찾기
