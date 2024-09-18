@@ -128,7 +128,7 @@ var BeautifulJekyllJS = {
       // 복사 버튼 생성
       var button = document.createElement('button');
       button.className = 'copy-code-btn';
-      button.textContent = 'Copy';
+      button.textContent = 'Copy All';
 
       // 복사 버튼 클릭 시
       button.addEventListener('click', function() {
