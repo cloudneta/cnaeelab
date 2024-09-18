@@ -131,7 +131,7 @@ var BeautifulJekyllJS = {
       button.addEventListener('click', function() {
         // 코드 텍스트만 복사 (라인 번호 제외) & 줄바꿈 유지
         var codeLines = codeBlock.querySelectorAll('span'); // 코드 라인들이 span으로 감싸져 있는 경우
-        var codeText = Array.from(codeLines).map(line => line.textContent).join('\n'); // 각 줄의 텍스트만 추출
+        var codeText = Array.from(codeLines).map(line => line.textContent).join(''); // 각 줄의 텍스트만 추출
 
         navigator.clipboard.writeText(codeText)
           .then(() => {
