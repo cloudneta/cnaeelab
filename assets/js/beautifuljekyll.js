@@ -128,16 +128,15 @@ var BeautifulJekyllJS = {
       button.className = 'copy-code-btn';
       button.textContent = 'Copy';
       
-      button.addEventListener('click', function() {
+       button.addEventListener('click', function() {
         // 코드 블록에서 라인 넘버가 아닌 순수 코드 텍스트만 복사
         var codeText = ''; // 복사할 코드 텍스트를 저장할 변수
-        
         codeBlock.childNodes.forEach(function(node) {
           var lineText = node.textContent || node.innerText;
 
           // "##"로 시작하는 주석은 건너뛴다
           if (lineText && !lineText.trim().startsWith('##')) {
-            codeText += lineText + '\n';
+            codeText += lineText; // 해당 노드의 텍스트만 추가
           }
         });
 
