@@ -119,6 +119,11 @@ var BeautifulJekyllJS = {
   initCopyButtons: function() {
     // 코드 블록에 복사 버튼 추가
     document.querySelectorAll('pre').forEach(function(pre) {
+      var codeBlock = pre.querySelector('code'); // 코드 블록을 찾기
+      if (!codeBlock) {
+        return; // pre 태그 내에 code 블록이 없는 경우 버튼을 추가하지 않음
+      }
+      
       var button = document.createElement('button');
       button.className = 'copy-code-btn';
       button.textContent = 'Copy';
@@ -132,7 +137,8 @@ var BeautifulJekyllJS = {
           })
           .catch(err => console.error('Error copying text: ', err));
       });
-
+      pre.style.position = 'relative'; // 버튼이 올바르게 배치될 수 있도록 위치 스타일을 설정
+      pre.insertBefore(button, pre.firstChild); // 버튼을 첫 번째 요소로 추가
       pre.parentElement.insertBefore(button, pre);
     });
   },
