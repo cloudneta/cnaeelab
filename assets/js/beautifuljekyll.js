@@ -129,8 +129,9 @@ var BeautifulJekyllJS = {
       button.textContent = 'Copy';
       
       button.addEventListener('click', function() {
-        var codeBlock = pre.querySelector('code');
-        navigator.clipboard.writeText(codeBlock.textContent)
+        var codeLines = codeBlock.querySelectorAll('span'); // 코드 라인들이 span으로 감싸져 있는 경우
+        var codeText = Array.from(codeLines).map(line => line.textContent).join('\n'); // 각 줄의 텍스트만 추출
+        navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
             setTimeout(() => button.textContent = 'Copy', 2000);
