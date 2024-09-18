@@ -123,11 +123,6 @@ var BeautifulJekyllJS = {
       if (!codeBlock) {
         return; // pre 태그 내에 code 블록이 없는 경우 버튼을 추가하지 않음
       }
-      
-      // 복사 버튼 생성
-      var button = document.createElement('button');
-      button.className = 'copy-code-btn';
-      button.textContent = 'Copy';
 
       button.addEventListener('click', function() {
         // 코드 블록에서 라인 넘버가 아닌 순수 코드 텍스트만 복사
