@@ -129,7 +129,7 @@ var BeautifulJekyllJS = {
       button.textContent = 'Copy';
       
       button.addEventListener('click', function() {
-        var codeText = codeBlock.textContent;
+        var codeText = codeBlock.innerText;
         navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
