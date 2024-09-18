@@ -139,7 +139,6 @@ var BeautifulJekyllJS = {
       });
       pre.style.position = 'relative'; // 버튼이 올바르게 배치될 수 있도록 위치 스타일을 설정
       pre.insertBefore(button, pre.firstChild); // 버튼을 첫 번째 요소로 추가
-      pre.parentElement.insertBefore(button, pre);
     });
   },
 
