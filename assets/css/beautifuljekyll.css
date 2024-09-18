@@ -147,6 +147,27 @@ pre {
   position: relative;
 }
 
+/* --- line copy button --- */
+.code-line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-code-btn-line {
+  display: none; /* 기본적으로 복사 버튼 숨김 */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.code-line-container:hover .copy-code-btn-line {
+  display: inline-block; /* 호버할 때만 복사 버튼 표시 */
+}
+
 
 /* --- Navbar --- */
 
