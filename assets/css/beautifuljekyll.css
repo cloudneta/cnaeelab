@@ -150,8 +150,13 @@ pre {
 /* --- line copy button --- */
 .code-line-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* 라인 텍스트와 버튼을 양쪽 끝에 배치 */
   align-items: center;
+  white-space: pre-wrap; /* 텍스트 줄바꿈 허용 */
+}
+
+.code-line {
+  flex-grow: 1; /* 텍스트가 줄을 넘어가도 버튼이 우측 끝에 고정 */
 }
 
 .copy-code-btn-line {
