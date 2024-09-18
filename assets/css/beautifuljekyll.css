@@ -128,10 +128,16 @@ img {
 }
 
 /* details 태그 내에서 코드 블록을 담고 있는 div의 레이아웃 문제 해결 */
-details > div {
+details div {
   display: block !important;
   width: 100% !important;
   overflow-x: auto !important; /* 코드 블록이 넘칠 때 가로 스크롤을 허용 */
+}
+
+details div pre {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  white-space: pre-wrap !important; /* 줄바꿈 방지 */
 }
 
 /* pre, code 블록을 위한 스타일 */
@@ -154,7 +160,7 @@ pre code {
   cursor: pointer;
   font-size: 0.8em;
   border-radius: 3px;
-  z-index: 1;
+  z-index: 10;
 }
 
 pre {
@@ -176,15 +182,16 @@ pre {
 }
 
 .copy-code-btn-line {
-  position: absolute; /* 버튼을 절대 위치로 고정 */
-  right: 0; /* 버튼이 항상 우측 끝에 위치 */
-  background-color: #1a1a2e;
+  position: absolute;
+  right: 0;
+  background-color: #1a1a2e; /* 어두운 배경 */
   color: white;
   border: none;
   padding: 2px 5px;
   cursor: pointer;
   font-size: 12px;
   display: none; /* 기본적으로 숨김 */
+  z-index: 10;
 }
 
 .code-line-container:hover .copy-code-btn-line {
