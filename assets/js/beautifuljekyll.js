@@ -152,12 +152,17 @@ var BeautifulJekyllJS = {
             // 기존 버튼 숨기기
             button.style.visibility = 'hidden';
             // 복사 완료 메시지 버튼 추가
-            var successButton = document.createElement('button');
+            var successButton = document.createElement('span');
             successButton.className = 'copy-success-btn';
             successButton.textContent = 'Copied!';
             successButton.style.position = 'absolute';
-            successButton.style.right = button.style.right;
+            successButton.style.right = '10px';
             successButton.style.top = button.style.top;
+            successButton.style.backgroundColor = '#007acc';
+            successButton.style.color = 'white';
+            successButton.style.padding = '0.2em 0.5em';
+            successButton.style.borderRadius = '3px';
+            successButton.style.zIndex = '10';
 
             pre.insertBefore(successButton, button);
 
