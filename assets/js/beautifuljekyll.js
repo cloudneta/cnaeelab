@@ -124,9 +124,14 @@ var BeautifulJekyllJS = {
         return; // pre 태그 내에 code 블록이 없는 경우 버튼을 추가하지 않음
       }
       
-      var button = document.createElement('button');
-      button.className = 'copy-code-btn';
-      button.textContent = 'Copy';
+      // 코드 블록에서 라인 넘버가 아닌 순수 코드 텍스트만 복사
+      var codeText = ''; // 복사할 코드 텍스트를 저장할 변수
+      codeBlock.childNodes.forEach(function(node) {
+        // 텍스트 노드나, 라인 넘버(span 태그가 아닌) 노드만 텍스트로 추출
+        if (node.nodeType === Node.TEXT_NODE || (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SPAN')) {
+          codeText += node.textContent; // 해당 노드의 텍스트만 추가
+        }
+      });
       
       button.addEventListener('click', function() {
         // 라인 넘버가 있는 span 태그를 제외하고 텍스트만 복사
