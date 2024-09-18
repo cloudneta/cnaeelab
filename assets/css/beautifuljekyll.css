@@ -129,8 +129,8 @@ img {
 
 /* Code block inside <details> */
 details div {
-  max-width: 100%; /* 코드 블록이 잘리지 않도록 최대 너비 설정 */
-  overflow-x: auto; /* 내용이 넘칠 경우 가로 스크롤 가능 */
+  max-width: 100% !important; /* 코드 블록이 잘리지 않도록 최대 너비 설정 */
+  overflow-x: auto !important; /* 내용이 넘칠 경우 가로 스크롤 가능 */
 }
 
 /* --- copy button --- */
