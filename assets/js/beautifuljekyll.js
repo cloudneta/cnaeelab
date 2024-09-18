@@ -27,6 +27,7 @@ var BeautifulJekyllJS = {
 
     // initCopyButton
     BeautifulJekyllJS.initCopyButtons();
+    BeautifulJekyllJS.initLineCopyButtons();
 
     // show the big header image
     BeautifulJekyllJS.initImgs();
@@ -150,6 +151,44 @@ var BeautifulJekyllJS = {
       // 복사 버튼을 코드 블록에 추가
       pre.style.position = 'relative';
       pre.insertBefore(button, pre.firstChild); // 복사 버튼을 첫 번째 요소로 추가
+
+      // **라인별 복사 버튼 추가**
+      var lines = codeBlock.innerText.split('\n'); // 코드 블록을 줄 단위로 나눔
+      codeBlock.innerHTML = ''; // 기존 코드 지우고 다시 구성
+
+      lines.forEach(function(line) {
+        var lineContainer = document.createElement('div'); // 각 라인을 감쌀 컨테이너
+        lineContainer.className = 'code-line-container'; // 스타일을 위해 클래스 추가
+
+        // 라인 텍스트를 넣을 span 생성
+        var lineSpan = document.createElement('span');
+        lineSpan.className = 'code-line';
+        lineSpan.textContent = line; // 실제 코드 텍스트
+
+        // **라인 복사 버튼 생성**
+        var lineCopyButton = document.createElement('button');
+        lineCopyButton.className = 'copy-code-btn-line';
+        lineCopyButton.textContent = 'Copy Line';
+
+        // **라인 복사 버튼 클릭 시**
+        lineCopyButton.addEventListener('click', function() {
+          // 해당 라인 텍스트만 복사
+          navigator.clipboard.writeText(line)
+            .then(() => {
+              lineCopyButton.textContent = 'Copied!';
+              setTimeout(() => lineCopyButton.textContent = 'Copy Line', 2000);
+            })
+            .catch(err => console.error('Error copying line: ', err));
+        });
+
+        // 라인과 버튼을 컨테이너에 추가
+        lineContainer.appendChild(lineSpan);
+        lineContainer.appendChild(lineCopyButton);
+
+        // 기존 코드 블록에 라인 컨테이너를 추가
+        codeBlock.appendChild(lineContainer);
+      });
+      
     });
   },
 
