@@ -162,7 +162,7 @@ var BeautifulJekyllJS = {
   }
 };
 
-$('a[href=#top]').click(function () {
+$('a[href="#top"]').click(function () {
     $('body,html').animate({
         scrollTop: 0
     }, 600);
