@@ -129,12 +129,15 @@ var BeautifulJekyllJS = {
       button.textContent = 'Copy';
       
       button.addEventListener('click', function() {
-        // 코드 텍스트만 복사 (라인 번호 제외) & 줄바꿈 유지
-        var codeLines = codeBlock.querySelectorAll('span'); // 코드 라인들이 span으로 감싸져 있는 경우
-        var codeText = Array.from(codeBlock.childNodes)
-          .filter(node => node.nodeType === Node.TEXT_NODE || node.tagName !== 'SPAN') // 라인 넘버를 제외한 텍스트 추출
-          .map(node => node.textContent || node.innerText)
-          .join('');
+        // 코드 블록에서 라인 넘버가 아닌 순수 코드 텍스트만 복사
+        var codeText = ''; // 복사할 코드 텍스트를 저장할 변수
+        codeBlock.childNodes.forEach(function(node) {
+          // 텍스트 노드나, 라인 넘버(span 태그가 아닌) 노드만 텍스트로 추출
+          if (node.nodeType === Node.TEXT_NODE || (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SPAN')) {
+            codeText += node.textContent; // 해당 노드의 텍스트만 추가
+          }
+        });
+
         navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
