@@ -39,12 +39,18 @@ layout: base
         </div>
       {% endif %}
 
+      
       <article role="main" class="blog-post">
-        {{ content }}
+        <!-- 복사 버튼과 코드 블록을 감싸는 요소 추가 -->
+        <div class="code-container">
+          <button class="copy-code-btn">Copy</button>
+          {{ content }}
+        </div>
         <p class="totop"> 
           <a href="#top"><img src="../assets/img/up_1.png" width="30" onmouseover="this.src='../assets/img/up_2.png'" onmouseout="this.src='../assets/img/up_1.png'"></a> 
         </p>
       </article>
+
 
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
