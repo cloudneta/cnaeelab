@@ -127,6 +127,27 @@ img {
   }
 }
 
+
+/* --- copy button --- */
+.copy-code-btn {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  font-size: 0.8em;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+pre {
+  position: relative;
+}
+
+
 /* --- Navbar --- */
 
 .navbar-custom {
