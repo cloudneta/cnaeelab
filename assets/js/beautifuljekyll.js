@@ -129,15 +129,10 @@ var BeautifulJekyllJS = {
       button.textContent = 'Copy';
       
       button.addEventListener('click', function() {
-        var codeText = ''; // 빈 문자열 초기화
-        codeBlock.childNodes.forEach(function(node) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            codeText += node.textContent; // 텍스트 노드일 경우 텍스트를 추가
-          } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SPAN') {
-            // 요소 노드인 경우 (예: <span>은 라인 넘버로 간주하여 제외)
-            codeText += node.innerText; // 요소 내 텍스트를 추가
-          }
-        });
+        // 코드 텍스트만 복사 (라인 번호 제외) & 줄바꿈 유지
+        var codeText = Array.from(codeBlock.childNodes)
+          .map(node => node.nodeType === Node.TEXT_NODE ? node.textContent : node.innerText) // 텍스트 노드 또는 요소 텍스트 가져오기
+          .join(''); // 텍스트를 병합
         navigator.clipboard.writeText(codeText)
           .then(() => {
             button.textContent = 'Copied!';
