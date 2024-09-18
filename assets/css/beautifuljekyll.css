@@ -127,12 +127,22 @@ img {
   }
 }
 
-/* details 태그 내 div 스타일 */
+/* details 태그 내에서 코드 블록을 담고 있는 div의 레이아웃 문제 해결 */
 details > div {
   display: block !important;
-  max-width: 100% !important; /* 코드 블록이 잘리지 않도록 최대 너비 설정 */
-  overflow-x: auto !important; /* 가로 스크롤을 가능하게 설정 */
-  white-space: pre-wrap !important; /* 줄바꿈 및 텍스트가 잘리지 않도록 설정 */
+  width: 100% !important;
+  overflow-x: auto !important; /* 코드 블록이 넘칠 때 가로 스크롤을 허용 */
+}
+
+/* pre, code 블록을 위한 스타일 */
+pre code {
+  display: block;
+  max-width: 100% !important;
+  white-space: pre-wrap !important; /* 긴 코드 줄이 잘리지 않고 줄바꿈 되도록 */
+  overflow-x: auto !important; /* 넘칠 경우 가로 스크롤 허용 */
+  background-color: #f5f5f5; /* 배경색 설정 */
+  padding: 10px; /* 코드 블록 내부 여백 */
+  border-radius: 5px; /* 모서리 둥글게 */
 }
 
 /* --- copy button --- */
