@@ -117,11 +117,14 @@ var BeautifulJekyllJS = {
 
   // codeblock copy button
   initCopyButtons: function() {
-    // 전체 코드 블록 복사 기능
-    const copyCodeButtons = document.querySelectorAll('.copy-code-btn');
-    copyCodeButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        const codeBlock = button.parentElement.querySelector('pre > code');
+    // 코드 블록에 복사 버튼 추가
+    document.querySelectorAll('pre').forEach(function(pre) {
+      var button = document.createElement('button');
+      button.className = 'copy-code-btn';
+      button.textContent = 'Copy';
+      
+      button.addEventListener('click', function() {
+        var codeBlock = pre.querySelector('code');
         navigator.clipboard.writeText(codeBlock.textContent)
           .then(() => {
             button.textContent = 'Copied!';
@@ -129,6 +132,8 @@ var BeautifulJekyllJS = {
           })
           .catch(err => console.error('Error copying text: ', err));
       });
+
+      pre.parentElement.insertBefore(button, pre);
     });
   },
 
