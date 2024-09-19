@@ -139,12 +139,12 @@ details div {
 pre {
   display: block;
   max-width: 100%;
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
   overflow-x: auto;
 }
 
 code {
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
   display: block;
   overflow-x: auto;
 }
