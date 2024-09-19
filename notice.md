@@ -1,4 +1,4 @@
-인프런에 개설된 CloudNet@와 함께하는 Amazon EKS 기본 강의의 Hands-On 페이지입니다.
+인프런에 개설된 CloudNet@와 함께하는 Amazon EKS 확장판 강의의 Hands-On 페이지입니다.
 
 실습에서 사용하는 다양한 명령어를 정리한 것으로 실습을 진행함에 있어 도움을 주고자 개설했습니다.
 
