@@ -172,7 +172,7 @@ var BeautifulJekyllJS = {
       pre.insertBefore(button, pre.firstChild); // 복사 버튼을 첫 번째 요소로 추가
 
       // **라인별 복사 버튼 추가**
-      var lines = codeBlock.innerHTML.split('\n'); // 코드 블록을 줄 단위로 나눔
+      var lines = codeBlock.innerText.split('\n'); // 코드 블록을 줄 단위로 나눔
       codeBlock.innerHTML = ''; // 기존 코드 지우고 다시 구성
 
       lines.forEach(function(line) {
