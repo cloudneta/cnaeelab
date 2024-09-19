@@ -146,6 +146,7 @@ pre {
 code {
   white-space: pre-wrap !important;
   display: block !important;
+  white-space: pre-wrap !important;
   overflow-x: auto !important;
 }
 
